@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  height: 100px;
+  padding: 60px 50px;
+  background-color: red;
+}
+h1 {
+  color: #f3f3f3;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background: green; */
+}
+nav a {
+  padding-left: 20px;
+  text-decoration: none;
+  color: #f3f3f3;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+  background: rgb(6, 102, 140);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgb(6, 102, 140) 0%,
+    rgb(178, 184, 190) 50%,
+    rgb(103, 148, 54) 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgb(6, 102, 140) 0%,
+    rgb(178, 184, 190) 50%,
+    rgb(103, 148, 54) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgb(6, 102, 140) 0%,
+    rgb(178, 184, 190) 50%,
+    rgb(103, 148, 54) 100%
+  );
+}
+
+.card {
+  position: relative;
+  /* width: 300px;
+  height: 350px;
+  margin: 20px; */
+  width: 250px;
+  height: 300px;
+  margin: 70px;
+}
+
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  /* box-shadow: 0 5px 10px #000; */
+  box-shadow: 10px 10px 15px #000;
+}
+
+.card .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+}
+
+.card .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  /* box-shadow: 0 5px 10px #000; */
+  box-shadow: 10px 10px 15px #000;
+}
+
+.card .back .link {
+  border-top: solid 1px #f3f3f3;
+  height: 50px;
+  line-height: 50px;
+}
+
+.card .back .link a {
+  color: #f3f3f3;
+  cursor: pointer;
+}
+
+.card .back h3 {
+  font-size: 25px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card .back p {
+  letter-spacing: 1px;
+}
+
+.card .back ul {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
